@@ -41,6 +41,7 @@ def register(request):
 
 def login(request):
     if request.method == 'GET':
+        captcha = random.randint(1000, 9999)
         return render(request, template_name='login/login.html')
     else:
         username = request.POST.get('username')
